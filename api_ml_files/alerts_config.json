@@ -1,0 +1,37 @@
+[
+    {
+        "category": "all",
+        "name": "cadena shimano hg 40 - 6, 7, 8 v",
+        "period": 3,
+        "type": "mean",
+        "threshold": 0.001
+    },
+    {
+        "category": "all",
+        "name": "all",
+        "period": 7,
+        "type": "min",
+        "threshold": 0.05
+    },
+    {
+        "category": "all",
+        "name": "all",
+        "period": 7,
+        "type": "count",
+        "threshold": 0.05
+    },
+    {
+        "category": "all",
+        "name": "all",
+        "period": 1,
+        "type": "min",
+        "threshold": 0.05
+    },
+    {
+        "category": "all",
+        "name": "all",
+        "period": 1,
+        "type": "count",
+        "threshold": 0.03
+    }
+]
