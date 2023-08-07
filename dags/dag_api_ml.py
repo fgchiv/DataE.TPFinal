@@ -13,11 +13,11 @@ from airflow.models import Variable
 
 
 def _search_items_ml(ti):
-    # Lanzar una excepción si se corre esta función con otra fecha que no sea la actual, en backfill por ejemplo
-    if ti.execution_date.strftime("%Y-%m-%d") != str(dt.date.today()):
-        raise Exception(
-            "La fecha de hoy no coincide con la fecha de ejecución. \n Ejecución cancelada para evitar cargar datos incorrectos"
-        )
+    # # Lanzar una excepción si se corre esta función con otra fecha que no sea la actual, en backfill por ejemplo
+    # if ti.execution_date.strftime("%Y-%m-%d") != str(dt.date.today()):
+    #     raise Exception(
+    #         "La fecha de hoy no coincide con la fecha de ejecución. \n Ejecución cancelada para evitar cargar datos incorrectos"
+    #     )
 
     # Cargar el json de los ítems a buscar en ML
     with open(
@@ -319,18 +319,15 @@ def _alerts(ti):
             old_data["product_category"] + " " + old_data["product_name"]
         )
         old_data = old_data.drop(["product_category", "product_name"], axis=1)
-        print("OLD DATA: ", old_data)
 
         today_data = pd.read_sql_query(query_today, engine)
         today_data["category_and_name"] = (
             today_data["product_category"] + " " + today_data["product_name"]
         )
         today_data = today_data.drop(["product_category", "product_name"], axis=1)
-        print("TODAY DATA: ", today_data)
 
         # Merge de los df para facilitar el procesamiento
         data = pd.merge(old_data, today_data, on="category_and_name")
-        print("MERGED DATA: ", data)
         
         # Cálculo de la variación entre el valor viejo y el nuevo
         data[f"{alert['type']}_variation"] = (

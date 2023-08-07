@@ -1,0 +1,11 @@
+{
+    "ALERTS_SMTP_FROM": ,
+    "ALERTS_SMTP_HOST": ,
+    "ALERTS_SMTP_PASSWORD": ,
+    "ALERTS_SMTP_PORT": ,
+    "ALERTS_SMTP_TO": ,
+    "ALERTS_SMTP_USER": ,
+    "API_ML_FILEPATH": "/usr/local/airflow/api_ml_files",
+    "API_ML_FREE_SHIPPING_PRICE": 8000,
+    "API_ML_SECRET_ACCESS_TOKEN": 
+}
