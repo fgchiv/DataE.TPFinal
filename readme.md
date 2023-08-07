@@ -13,17 +13,17 @@ ETL de datos de MercadoLibre para construir un historial de precios de determina
 8. Configure la conexión a la base de datos con el nombre "redshift_conn", tipo "Postgres".
 9. Importe las variables desde el archivo variables.json (se adjunta un template en la raíz del repositorio) con las siguientes claves (el filepath es el definido en docker-compose.yaml):
 
-    "ALERTS_SMTP_FROM":
-    "ALERTS_SMTP_HOST":
-    "ALERTS_SMTP_PASSWORD":
-    "ALERTS_SMTP_PORT":
-    "ALERTS_SMTP_TO":
-    "ALERTS_SMTP_USER":
-    "API_ML_FILEPATH": "/usr/local/airflow/api_ml_files",
-    "API_ML_FREE_SHIPPING_PRICE": 
-    "API_ML_SECRET_ACCESS_TOKEN":
+        "ALERTS_SMTP_FROM":
+        "ALERTS_SMTP_HOST":
+        "ALERTS_SMTP_PASSWORD":
+        "ALERTS_SMTP_PORT":
+        "ALERTS_SMTP_TO":
+        "ALERTS_SMTP_USER":
+        "API_ML_FILEPATH": "/usr/local/airflow/api_ml_files"
+        "API_ML_FREE_SHIPPING_PRICE":
+        "API_ML_SECRET_ACCESS_TOKEN":
 
-10. Puede activar el dag y configurar las alertas y el dag desde los archivso de configuración './api_ml_files/alerts_config.json' y './api_ml_files/api_ml_config.json'. Asegúrese de que las tablas estén creadas en la base de datos.
+11. Puede activar el dag y configurar las alertas y el dag desde los archivso de configuración './api_ml_files/alerts_config.json' y './api_ml_files/api_ml_config.json'. Asegúrese de que las tablas estén creadas en la base de datos.
 
 ## Creación de las tablas en la base de datos
 
